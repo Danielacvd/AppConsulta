@@ -1,0 +1,32 @@
+<%= form_with(model: sesion_colegio, local: true) do |form| %>
+  <% if sesion_colegio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sesion_colegio.errors.count, "error") %> prohibited this sesion_colegio from being saved:</h2>
+
+      <ul>
+      <% sesion_colegio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cita %>
+    <%= form.date_select :cita, id: :sesion_colegio_cita %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :sesion_colegio_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_cita %>
+    <%= form.number_field :numero_cita, id: :sesion_colegio_numero_cita %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

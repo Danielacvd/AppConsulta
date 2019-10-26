@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cita:</strong>
+  <%= @sesion_colegio.cita %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @sesion_colegio.descripcion %>
+</p>
+
+<p>
+  <strong>Numero cita:</strong>
+  <%= @sesion_colegio.numero_cita %>
+</p>
+
+<%= link_to 'Edit', edit_sesion_colegio_path(@sesion_colegio) %> |
+<%= link_to 'Back', sesion_colegios_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cita: 2019-10-26
+  descripcion_sesion: MyText
+  numero_cita: 1
+
+two:
+  cita: 2019-10-26
+  descripcion_sesion: MyText
+  numero_cita: 1

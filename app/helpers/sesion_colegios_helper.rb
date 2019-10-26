@@ -1,0 +1,2 @@
+module SesionColegiosHelper
+end

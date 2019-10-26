@@ -1,0 +1,32 @@
+<%= form_with(model: sesion_particular, local: true) do |form| %>
+  <% if sesion_particular.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sesion_particular.errors.count, "error") %> prohibited this sesion_particular from being saved:</h2>
+
+      <ul>
+      <% sesion_particular.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cita %>
+    <%= form.date_select :cita, id: :sesion_particular_cita %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion_sesion %>
+    <%= form.text_area :descripcion_sesion, id: :sesion_particular_descripcion_sesion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_cita %>
+    <%= form.number_field :numero_cita, id: :sesion_particular_numero_cita %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
