@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   resources :sesion_colegios
   resources :tratamientos
   resources :tests
@@ -8,6 +10,5 @@ Rails.application.routes.draw do
    devise_for :users, controllers: {
      sessions: 'users/sessions'
    }
-   asddasdasasd
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
