@@ -6,4 +6,11 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :pacientes
   has_many :cargos
+  after_initialize do
+    if self.new_record?
+      self.role ||= :visit
+    end
+  end
+  enum role: [:visit, :admin]
+
 end

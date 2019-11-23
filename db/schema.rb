@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20191026154919) do
     t.string "last_name"
     t.string "photo"
     t.bigint "cargo_id"
-    t.boolean "role"
+    t.integer "role"
     t.index ["cargo_id"], name: "index_users_on_cargo_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
