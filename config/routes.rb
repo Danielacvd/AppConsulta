@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sesion_particulars
   resources :pacientes
   resources :cargos
+  root "pages#index"
    devise_for :users, controllers: {
      sessions: 'users/sessions'
    }
