@@ -1,0 +1,19 @@
+<h1>Dashboards#index</h1>
+<p>Find me in app/views/dashboards/index.html.erb</p>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Correo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
