@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :pacientes
   has_many :cargos
+  mount_uploader :photo, AvatarUploader
 end
