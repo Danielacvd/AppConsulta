@@ -1,5 +1,6 @@
 class TratamientosController < ApplicationController
   before_action :set_tratamiento, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tratamientos
   # GET /tratamientos.json

@@ -14,9 +14,25 @@
   </div>
 
   <div class="field">
+    <%= f.label :Apellido %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
     <%= f.label :photo %>
     <%= f.file_field :photo %>
   </div>
+
+  <!-- <div class="field">
+    <select name="user[cargo_id]" id="user_cargo_id">
+      <option value="1">asd</option>
+      <option value="2">asdasd</option>
+    </select>
+  </div> -->
+  <div class="field">
+    <%= f.collection_select(:cargo_id, Cargo.all, :id, :name, :prompt => 'Cargo') %>
+  </div>
+
 
   <div class="field">
     <%= f.label :password %>

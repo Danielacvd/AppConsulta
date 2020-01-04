@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_and_belongs_to_many :pacientes
-  has_many :cargos
+  belongs_to :cargo
 
   mount_uploader :photo, AvatarUploader
 

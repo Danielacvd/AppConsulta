@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191026154919) do
+ActiveRecord::Schema.define(version: 20200103161134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,19 @@ ActiveRecord::Schema.define(version: 20191026154919) do
     t.string "curso"
     t.string "photo"
     t.date "birth_date"
-    t.boolean "role"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes_tests", id: false, force: :cascade do |t|
+    t.bigint "paciente_id", null: false
+    t.bigint "test_id", null: false
+  end
+
+  create_table "pacientes_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "paciente_id", null: false
   end
 
   create_table "sesion_colegios", force: :cascade do |t|
@@ -58,6 +68,11 @@ ActiveRecord::Schema.define(version: 20191026154919) do
     t.boolean "diag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tests_tratamientos", id: false, force: :cascade do |t|
+    t.bigint "test_id", null: false
+    t.bigint "tratamiento_id", null: false
   end
 
   create_table "tratamientos", force: :cascade do |t|

@@ -1,3 +1,3 @@
 class SesionParticular < ApplicationRecord
-  has_many :pacientes
+  belongs_to :paciente
 end

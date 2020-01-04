@@ -1,5 +1,6 @@
 class PacientesController < ApplicationController
   before_action :set_paciente, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /pacientes
   # GET /pacientes.json
@@ -25,10 +26,11 @@ class PacientesController < ApplicationController
   # POST /pacientes.json
   def create
     @paciente = Paciente.new(paciente_params)
+    @paciente.users << current_user
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
+        format.html { redirect_to pacientes_path, notice: 'Paciente was successfully created.' }
         format.json { render :show, status: :created, location: @paciente }
       else
         format.html { render :new }

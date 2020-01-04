@@ -1,5 +1,6 @@
 class SesionParticularsController < ApplicationController
   before_action :set_sesion_particular, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /sesion_particulars
   # GET /sesion_particulars.json

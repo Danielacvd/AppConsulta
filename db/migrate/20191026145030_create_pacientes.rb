@@ -6,7 +6,7 @@ class CreatePacientes < ActiveRecord::Migration[5.1]
       t.string :curso
       t.string :photo
       t.date :birth_date
-      t.boolean :role
+      t.integer :role
 
       t.timestamps
     end

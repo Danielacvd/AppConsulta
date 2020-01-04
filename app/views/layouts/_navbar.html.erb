@@ -11,12 +11,20 @@
       <span class="glyphicon glyphicon-home"></span> Home
     </a>
   </div>
-  <ul>
+  <ul class="nav navbar-nav navbar-left">
+    <li><%= link_to 'Pacientes', pacientes_path %></li>
+    <li><%= link_to 'Tests', tests_path %></li>
+    <li><%= link_to 'Tratamientos', tratamientos_path %></li>
+    <li><%= link_to 'Sesion De Colegios', sesion_colegios_path %></li>
+    <li><%= link_to 'Sesion De Particulares', sesion_particulars_path %></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-left">
     <% if user_signed_in? %>
       <% if current_user.admin? %>
-        <li><%= link_to 'dashboard', dashboards_index_path %></li>
+        <li><%= link_to 'Dashboard', dashboards_index_path %></li>
+        <li><%= link_to 'Cargos', cargos_path %></li>
       <% end %>
-    <% end %>  
+    <% end %>
   </ul>
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

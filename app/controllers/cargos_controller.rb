@@ -1,5 +1,7 @@
 class CargosController < ApplicationController
   before_action :set_cargo, only: [:show, :edit, :update, :destroy]
+  before_action :check_rol
+  before_action :authenticate_user!
 
   # GET /cargos
   # GET /cargos.json
@@ -25,7 +27,6 @@ class CargosController < ApplicationController
   # POST /cargos.json
   def create
     @cargo = Cargo.new(cargo_params)
-
     respond_to do |format|
       if @cargo.save
         format.html { redirect_to @cargo, notice: 'Cargo was successfully created.' }
@@ -70,5 +71,15 @@ class CargosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cargo_params
       params.require(:cargo).permit(:name)
+    end
+
+    def check_rol
+      if user_signed_in?
+        unless current_user.admin?
+          redirect_to root_path
+        end
+      else
+      redirect_to root_path
+      end
     end
 end
