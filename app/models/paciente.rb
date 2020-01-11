@@ -3,4 +3,11 @@ class Paciente < ApplicationRecord
   has_and_belongs_to_many :users
   has_and_belongs_to_many :tests
   has_many :sesion_particulars
+
+  after_initialize do
+    if self.new_record?
+      self.role ||= :colegio
+    end
+  end
+  enum role: {colegio: 0, particular: 1}
 end

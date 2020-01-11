@@ -1,4 +1,4 @@
-<%= form_with(model: sesion_particular, local: true) do |form| %>
+<%= form_with(model: @sesion_particular, local: true) do |form| %>
   <% if sesion_particular.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sesion_particular.errors.count, "error") %> prohibited this sesion_particular from being saved:</h2>
@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :paciente_id, :value => @paciente.id %>
 
   <div class="field">
     <%= form.label :cita %>

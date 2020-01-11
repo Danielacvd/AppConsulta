@@ -5,7 +5,7 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.all
+    @pacientes = current_user.pacientes
   end
 
   # GET /pacientes/1
@@ -30,8 +30,13 @@ class PacientesController < ApplicationController
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to pacientes_path, notice: 'Paciente was successfully created.' }
-        format.json { render :show, status: :created, location: @paciente }
+        if @paciente.role == "colegio"
+          format.html { redirect_to tests_path, notice: 'Paciente was successfully created.' }
+          format.json { render :show, status: :created, location: @paciente }
+        else
+          format.html { redirect_to paciente_sesion_particulars_path(@paciente), notice: 'Paciente was successfully created.' }
+          format.json { render :show, status: :created, location: @paciente }
+        end
       else
         format.html { render :new }
         format.json { render json: @paciente.errors, status: :unprocessable_entity }

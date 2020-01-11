@@ -9,3 +9,6 @@ Cargo.create(name: "administrador")
 User.create(name: "admin", email: "admin@admin.com", cargo_id: 1, password: "asdasdasd", role: 1)
 User.create(name: "userVisita2", email: "v2@gmail.com", cargo_id: 2, password: "asdasdasd")
 User.create(name: "userVisita3", email: "v3@gmail.com", cargo_id: 2, password: "asdasdasd")
+10.times do |i|
+  Cargo.create(name: "Cargo#{i + 1}")
+end

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :tratamientos
   resources :tests
   resources :sesion_particulars
-  resources :pacientes
+  resources :pacientes do
+    resources :sesion_particulars
+  end
   resources :cargos
   get 'pages/dashboard'
   root 'pages#index'

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   font-family: 'Open Sans', sans-serif;
+   padding: 15px;
+ }
+
+ header {
+   background-image: url('images/fondo.png');
+   background-color: rgb(89, 123, 226);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: left;
+   padding-bottom: 10rem;
+ }

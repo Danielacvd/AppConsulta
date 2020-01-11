@@ -1,3 +1,3 @@
 class SesionColegio < ApplicationRecord
-  has_many :tratamientos
+  belongs_to :tratamiento
 end

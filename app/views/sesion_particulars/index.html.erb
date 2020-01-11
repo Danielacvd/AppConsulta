@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @sesion_particulars.each do |sesion_particular| %>
+    <% @paciente.sesion_particulars.each do |sesion_particular| %>
       <tr>
         <td><%= sesion_particular.cita %></td>
         <td><%= sesion_particular.descripcion_sesion %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Sesion Particular', new_sesion_particular_path %>
+<%= link_to 'New Sesion Particular',  new_paciente_sesion_particular_path(@paciente) %>

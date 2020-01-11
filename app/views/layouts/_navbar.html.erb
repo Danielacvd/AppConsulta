@@ -1,42 +1,35 @@
-<nav class="navbar navbar-default">
-<div class="container">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="<%= root_url %>">
-      <span class="glyphicon glyphicon-home"></span> Home
-    </a>
-  </div>
-  <ul class="nav navbar-nav navbar-left">
-    <li><%= link_to 'Pacientes', pacientes_path %></li>
-    <li><%= link_to 'Tests', tests_path %></li>
-    <li><%= link_to 'Tratamientos', tratamientos_path %></li>
-    <li><%= link_to 'Sesion De Colegios', sesion_colegios_path %></li>
-    <li><%= link_to 'Sesion De Particulares', sesion_particulars_path %></li>
-  </ul>
-  <ul class="nav navbar-nav navbar-left">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+  <a class="navbar-brand" href="<%= root_url %>"><span class="glyphicon glyphicon-home"></span> Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <% if user_signed_in? %>
+      <li class="nav-item nav-link"><%= link_to 'Pacientes', pacientes_path %></li>
+      <li class="nav-item nav-link"><%= link_to 'Tratamientos', tratamientos_path %></li>
+      <li class="nav-item nav-link"><%= link_to 'Tests', tests_path %></li>
+      <li class="nav-item nav-link"><%= link_to 'Sesion De Colegios', sesion_colegios_path %></li>
+      <li class="nav-item nav-link"><%= link_to 'Sesion De Particulares', sesion_particulars_path %></li>
+    <% end %>
+    </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <% if user_signed_in? %>
       <% if current_user.admin? %>
-        <li><%= link_to 'Dashboard', dashboards_index_path %></li>
-        <li><%= link_to 'Cargos', cargos_path %></li>
+        <li class="nav-item nav-link"><%= link_to 'Dashboard', dashboards_index_path %></li>
+        <li class="nav-item nav-link"><%= link_to 'Cargos', cargos_path %></li>
       <% end %>
     <% end %>
   </ul>
-
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li><a href="#">Hola <%= current_user.email %>!, <%= current_user.role%></a></li>
         <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Inicia sesión', new_user_session_path %></li>
-        <li><%= link_to 'Regístrate', new_user_registration_path %></li>
+        <li class="nav-item nav-link"><%= link_to 'Inicia sesión', new_user_session_path %></li>
+        <li class="nav-item nav-link"><%= link_to 'Regístrate', new_user_registration_path %></li>
       <% end %>
     </ul>
   </div>
-</div>
 </nav>

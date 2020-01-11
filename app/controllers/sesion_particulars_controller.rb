@@ -5,7 +5,7 @@ class SesionParticularsController < ApplicationController
   # GET /sesion_particulars
   # GET /sesion_particulars.json
   def index
-    @sesion_particulars = SesionParticular.all
+    @paciente = Paciente.find(params[:paciente_id])
   end
 
   # GET /sesion_particulars/1
@@ -15,6 +15,7 @@ class SesionParticularsController < ApplicationController
 
   # GET /sesion_particulars/new
   def new
+    @paciente = Paciente.find(params[:paciente_id])
     @sesion_particular = SesionParticular.new
   end
 
@@ -26,10 +27,11 @@ class SesionParticularsController < ApplicationController
   # POST /sesion_particulars.json
   def create
     @sesion_particular = SesionParticular.new(sesion_particular_params)
+    @sesion_particular.paciente = Paciente.find(params[:sesion_particular][:paciente_id])
 
     respond_to do |format|
       if @sesion_particular.save
-        format.html { redirect_to @sesion_particular, notice: 'Sesion particular was successfully created.' }
+        format.html { redirect_to  paciente_sesion_particulars_path(@sesion_particular.paciente), notice: 'Sesion particular was successfully created.' }
         format.json { render :show, status: :created, location: @sesion_particular }
       else
         format.html { render :new }
@@ -41,9 +43,11 @@ class SesionParticularsController < ApplicationController
   # PATCH/PUT /sesion_particulars/1
   # PATCH/PUT /sesion_particulars/1.json
   def update
+    @sesion_particular = SesionParticular.new(sesion_particular_params)
+    @sesion_particular.paciente = Paciente.find(params[:sesion_particular][:paciente_id])
     respond_to do |format|
       if @sesion_particular.update(sesion_particular_params)
-        format.html { redirect_to @sesion_particular, notice: 'Sesion particular was successfully updated.' }
+        format.html { redirect_to paciente_sesion_particulars_path(@sesion_particular.paciente), notice: 'Sesion particular was successfully updated.' }
         format.json { render :show, status: :ok, location: @sesion_particular }
       else
         format.html { render :edit }
@@ -55,9 +59,10 @@ class SesionParticularsController < ApplicationController
   # DELETE /sesion_particulars/1
   # DELETE /sesion_particulars/1.json
   def destroy
+    @paciente = @sesion_particular.paciente
     @sesion_particular.destroy
     respond_to do |format|
-      format.html { redirect_to sesion_particulars_url, notice: 'Sesion particular was successfully destroyed.' }
+      format.html { redirect_to paciente_sesion_particulars_path(@sesion_particular.paciente), notice: 'Sesion particular was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
