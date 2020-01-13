@@ -6,6 +6,7 @@ class TestsController < ApplicationController
   # GET /tests.json
   def index
     @tests = Test.all
+    @paciente = Paciente.find(params[:paciente_id])
   end
 
   # GET /tests/1
@@ -15,6 +16,7 @@ class TestsController < ApplicationController
 
   # GET /tests/new
   def new
+    @paciente = Paciente.find(params[:paciente_id])
     @test = Test.new
   end
 
@@ -26,6 +28,7 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
+    @test.pacientes = Paciente.find(params[:test][:paciente_id])
 
     respond_to do |format|
       if @test.save

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :sesion_particulars
   resources :pacientes do
     resources :sesion_particulars
+    resources :tests
   end
   resources :cargos
   get 'pages/dashboard'

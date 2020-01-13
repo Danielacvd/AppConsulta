@@ -17,5 +17,14 @@
   <%= @test.diag %>
 </p>
 
+<% if @test.name == "Teprosif"%>
+  <%= render 'testTeprosif', test: @test %>
+<% end %>
+<% if @test.name == "Test Exploratorio de gramatica Española"%>
+  <%= render 'testExploratorio', test: @test %>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>
