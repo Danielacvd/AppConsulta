@@ -3,6 +3,7 @@ class Paciente < ApplicationRecord
   has_and_belongs_to_many :users
   has_and_belongs_to_many :tests
   has_many :sesion_particulars
+  has_many :tratamientos
 
   after_initialize do
     if self.new_record?

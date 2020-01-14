@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+    <%= form.hidden_field :paciente_id, :value => @paciente.id %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :tratamiento_name %>

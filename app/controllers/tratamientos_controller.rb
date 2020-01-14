@@ -6,6 +6,7 @@ class TratamientosController < ApplicationController
   # GET /tratamientos.json
   def index
     @tratamientos = Tratamiento.all
+    @paciente = Paciente.find(params[:paciente_id])
   end
 
   # GET /tratamientos/1
@@ -15,6 +16,7 @@ class TratamientosController < ApplicationController
 
   # GET /tratamientos/new
   def new
+    @paciente = Paciente.find(params[:paciente_id])
     @tratamiento = Tratamiento.new
   end
 
@@ -26,10 +28,12 @@ class TratamientosController < ApplicationController
   # POST /tratamientos.json
   def create
     @tratamiento = Tratamiento.new(tratamiento_params)
+    @tratamiento.paciente = Paciente.find(params[:tratamiento][:paciente_id])
+
 
     respond_to do |format|
       if @tratamiento.save
-        format.html { redirect_to @tratamiento, notice: 'Tratamiento was successfully created.' }
+        format.html { redirect_to paciente_tratamientos_path(@tratamiento.paciente), notice: 'Tratamiento was successfully created.' }
         format.json { render :show, status: :created, location: @tratamiento }
       else
         format.html { render :new }
