@@ -24,8 +24,8 @@
   </ul>
     <ul class="navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li><a href="#">Hola <%= current_user.email %>!, <%= current_user.role%></a></li>
-        <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
+        <li><a href="#"> Hola <%= current_user.name %>  !!</a></li>
+        <li><%= link_to ' Cerrar sesión', destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li class="nav-item nav-link"><%= link_to 'Inicia sesión', new_user_session_path %></li>
         <li class="nav-item nav-link"><%= link_to 'Regístrate', new_user_registration_path %></li>

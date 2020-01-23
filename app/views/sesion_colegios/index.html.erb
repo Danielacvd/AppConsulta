@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @sesion_colegios.each do |sesion_colegio| %>
+    <% @sesiones_colegio.each do |sesion_colegio| %>
       <tr>
         <td><%= sesion_colegio.cita %></td>
         <td><%= sesion_colegio.descripcion %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Sesion Colegio', new_sesion_colegio_path %>
+<%= link_to 'New Sesion Colegio',  new_paciente_tratamiento_sesion_colegio_path(@tratamiento.paciente, @tratamiento) %>

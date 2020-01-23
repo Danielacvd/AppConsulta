@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :pacientes do
     resources :sesion_particulars
     resources :tests
-    resources :tratamientos
+    resources :tratamientos do
+      resources :sesion_colegios
+    end
   end
   resources :cargos
   get 'pages/dashboard'

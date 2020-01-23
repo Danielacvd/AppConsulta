@@ -26,3 +26,75 @@
    background-position: left;
    padding-bottom: 10rem;
  }
+.bg{
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(7,50,148,1) 48%, rgba(5,91,175,1) 61%, rgba(5,100,181,1) 64%, rgba(4,122,195,1) 71%, rgba(0,212,255,1) 100%);
+}
+.letracolegio{
+  font-size: 15px;
+}
+.registro{
+  width: 70%;
+  margin: 10px;
+  margin:0px auto;
+  text-align: center;
+  background-color: lightskyblue;
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+.card img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select{
+  border: 1px solid #c9c9c9;
+  box-shadow: 0px 0px 2px #ccc inset;
+  padding: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: gray;
+  transition: all 300ms;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus{
+  border: 3px solid #70b231;
+  color: black;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button{
+  display: block;
+  border-radius: 2px;
+  width: 60px;
+  padding: 3px;
+  background-color: #70b231;
+  border: 1px solid green;
+  cursor: pointer;
+  color: white;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+  box-shadow: 0px 0px 3px grey;
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+button:active{
+  box-shadow: 0px 0px 3px grey inset;
+  text-shadow: 0px 0px 1px #ccc;
+}
+input[type="submit"]{
+  margin: 0px auto;
+}

@@ -5,7 +5,6 @@ class TratamientosController < ApplicationController
   # GET /tratamientos
   # GET /tratamientos.json
   def index
-    @tratamientos = Tratamiento.all
     @paciente = Paciente.find(params[:paciente_id])
   end
 
@@ -22,6 +21,7 @@ class TratamientosController < ApplicationController
 
   # GET /tratamientos/1/edit
   def edit
+    @paciente = @tratamiento.paciente
   end
 
   # POST /tratamientos
@@ -33,7 +33,7 @@ class TratamientosController < ApplicationController
 
     respond_to do |format|
       if @tratamiento.save
-        format.html { redirect_to paciente_tratamientos_path(@tratamiento.paciente), notice: 'Tratamiento was successfully created.' }
+        format.html { redirect_to paciente_tratamiento_sesion_colegios_path(@tratamiento.paciente, @tratamiento), notice: 'Tratamiento was successfully created.' }
         format.json { render :show, status: :created, location: @tratamiento }
       else
         format.html { render :new }
@@ -45,9 +45,10 @@ class TratamientosController < ApplicationController
   # PATCH/PUT /tratamientos/1
   # PATCH/PUT /tratamientos/1.json
   def update
+    @tratamiento.paciente = Paciente.find(params[:tratamiento][:paciente_id])
     respond_to do |format|
       if @tratamiento.update(tratamiento_params)
-        format.html { redirect_to @tratamiento, notice: 'Tratamiento was successfully updated.' }
+        format.html { redirect_to paciente_tratamientos_path(@tratamiento.paciente), notice: 'Tratamiento was successfully updated.' }
         format.json { render :show, status: :ok, location: @tratamiento }
       else
         format.html { render :edit }
@@ -59,9 +60,10 @@ class TratamientosController < ApplicationController
   # DELETE /tratamientos/1
   # DELETE /tratamientos/1.json
   def destroy
+    @paciente = @tratamiento.paciente
     @tratamiento.destroy
     respond_to do |format|
-      format.html { redirect_to tratamientos_url, notice: 'Tratamiento was successfully destroyed.' }
+      format.html { redirect_to paciente_tratamientos_path(@tratamiento.paciente), notice: 'Tratamiento was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

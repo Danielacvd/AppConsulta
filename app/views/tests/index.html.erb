@@ -5,9 +5,9 @@
 <table class="table" border="1">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th>Diag</th>
+      <th>Nombre</th>
+      <th>Foto</th>
+      <th>Diagnostico</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
     <% @tests.each do |test| %>
       <tr>
         <td><%= test.name %></td>
-        <td><%= test.photo %></td>
+        <td><%= image_tag test.photo, size: "64x64" %></td>
         <td><%= test.diag %></td>
         <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
+        <td><%= link_to 'Edit', edit_paciente_test_path(test, @paciente) %></td>
         <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -5,7 +5,8 @@ class SesionColegiosController < ApplicationController
   # GET /sesion_colegios
   # GET /sesion_colegios.json
   def index
-    @sesion_colegios = SesionColegio.all
+    @sesiones_colegio = SesionColegio.where('tratamiento_id = ?',  params[:tratamiento_id])
+    @tratamiento = Tratamiento.find(params[:tratamiento_id])
   end
 
   # GET /sesion_colegios/1
@@ -16,6 +17,7 @@ class SesionColegiosController < ApplicationController
   # GET /sesion_colegios/new
   def new
     @sesion_colegio = SesionColegio.new
+    @tratamiento = Tratamiento.find(params[:tratamiento_id])
   end
 
   # GET /sesion_colegios/1/edit
@@ -26,10 +28,11 @@ class SesionColegiosController < ApplicationController
   # POST /sesion_colegios.json
   def create
     @sesion_colegio = SesionColegio.new(sesion_colegio_params)
+    @sesion_colegio.tratamiento = Tratamiento.find(params[:sesion_colegio][:tratamiento_id])
 
     respond_to do |format|
       if @sesion_colegio.save
-        format.html { redirect_to @sesion_colegio, notice: 'Sesion colegio was successfully created.' }
+        format.html { redirect_to paciente_tratamiento_sesion_colegios_path(@sesion_colegio.tratamiento.paciente ,@sesion_colegio.tratamiento), notice: 'Sesion colegio was successfully created.' }
         format.json { render :show, status: :created, location: @sesion_colegio }
       else
         format.html { render :new }

@@ -22,6 +22,7 @@ class TestsController < ApplicationController
 
   # GET /tests/1/edit
   def edit
+    @paciente = @test.pacientes
   end
 
   # POST /tests
@@ -44,9 +45,10 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1
   # PATCH/PUT /tests/1.json
   def update
+    @test.pacientes = Paciente.find(params[:test][:paciente_id])
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+        format.html { redirect_to paciente_tests_path(@paciente), notice: 'Test was successfully updated.' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }

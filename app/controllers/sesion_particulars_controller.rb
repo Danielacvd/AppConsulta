@@ -21,6 +21,7 @@ class SesionParticularsController < ApplicationController
 
   # GET /sesion_particulars/1/edit
   def edit
+    @paciente = @sesion_particular.paciente
   end
 
   # POST /sesion_particulars
@@ -43,7 +44,6 @@ class SesionParticularsController < ApplicationController
   # PATCH/PUT /sesion_particulars/1
   # PATCH/PUT /sesion_particulars/1.json
   def update
-    @sesion_particular = SesionParticular.new(sesion_particular_params)
     @sesion_particular.paciente = Paciente.find(params[:sesion_particular][:paciente_id])
     respond_to do |format|
       if @sesion_particular.update(sesion_particular_params)

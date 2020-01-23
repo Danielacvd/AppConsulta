@@ -12,3 +12,9 @@ User.create(name: "userVisita3", email: "v3@gmail.com", cargo_id: 2, password: "
 10.times do |i|
   Cargo.create(name: "Cargo#{i + 1}")
 end
+#Para subir fotos por consola
+#el archivo tiene que estar en la raiz del directorio
+#Para ingresar fotos.
+# 10.times do
+#   Photo.create(image: File.open('gato.jpg'))
+# end
