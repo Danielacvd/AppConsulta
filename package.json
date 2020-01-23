@@ -1,5 +1,7 @@
 {
   "name": "appConsulta",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "datatables.net-bs4": "^1.10.20"
+  }
 }
