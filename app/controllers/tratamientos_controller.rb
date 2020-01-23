@@ -11,6 +11,7 @@ class TratamientosController < ApplicationController
   # GET /tratamientos/1
   # GET /tratamientos/1.json
   def show
+    @paciente = @tratamiento.paciente
   end
 
   # GET /tratamientos/new

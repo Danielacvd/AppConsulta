@@ -19,6 +19,7 @@
         <td><%= link_to 'Show', tratamiento %></td>
         <td><%= link_to 'Edit', edit_tratamiento_path(tratamiento) %></td>
         <td><%= link_to 'Destroy', tratamiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Sesiones', paciente_tratamiento_sesion_colegios_path(tratamiento.paciente_id, tratamiento) %></td>
       </tr>
     <% end %>
   </tbody>

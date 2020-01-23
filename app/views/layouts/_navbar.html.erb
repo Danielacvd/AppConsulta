@@ -8,10 +8,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <% if user_signed_in? %>
       <li class="nav-item nav-link"><%= link_to 'Pacientes', pacientes_path %></li>
-      <li class="nav-item nav-link"><%= link_to 'Tratamientos', tratamientos_path %></li>
-      <li class="nav-item nav-link"><%= link_to 'Tests', tests_path %></li>
-      <li class="nav-item nav-link"><%= link_to 'Sesion De Colegios', sesion_colegios_path %></li>
-      <li class="nav-item nav-link"><%= link_to 'Sesion De Particulares', sesion_particulars_path %></li>
+      <li class="nav-item nav-link"><%= link_to 'New Paciente', new_paciente_path %></li>
     <% end %>
     </ul>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
