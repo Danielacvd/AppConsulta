@@ -11,6 +11,7 @@ class SesionParticularsController < ApplicationController
   # GET /sesion_particulars/1
   # GET /sesion_particulars/1.json
   def show
+    @paciente = @sesion_particular.paciente
   end
 
   # GET /sesion_particulars/new

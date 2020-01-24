@@ -12,6 +12,7 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+    @paciente = @test.pacientes
   end
 
   # GET /tests/new

@@ -3,4 +3,4 @@
 <%= render 'form', sesion_colegio: @sesion_colegio %>
 
 <%= link_to 'Show', @sesion_colegio %> |
-<%= link_to 'Back', sesion_colegios_path %>
+<%= link_to 'Back', paciente_tratamiento_sesion_colegios_path(@sesion_colegio.tratamiento, @tratamiento) %>

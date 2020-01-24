@@ -12,6 +12,7 @@ class SesionColegiosController < ApplicationController
   # GET /sesion_colegios/1
   # GET /sesion_colegios/1.json
   def show
+    @tratamiento = @sesion_colegio.tratamiento
   end
 
   # GET /sesion_colegios/new
@@ -22,6 +23,7 @@ class SesionColegiosController < ApplicationController
 
   # GET /sesion_colegios/1/edit
   def edit
+    @tratamiento = @sesion_colegio.tratamiento
   end
 
   # POST /sesion_colegios
@@ -44,6 +46,7 @@ class SesionColegiosController < ApplicationController
   # PATCH/PUT /sesion_colegios/1
   # PATCH/PUT /sesion_colegios/1.json
   def update
+      @sesion_colegio.tratamiento = Tratamiento.find(params[:sesion_colegio][:tratamiento_id])
     respond_to do |format|
       if @sesion_colegio.update(sesion_colegio_params)
         format.html { redirect_to @sesion_colegio, notice: 'Sesion colegio was successfully updated.' }
@@ -58,9 +61,10 @@ class SesionColegiosController < ApplicationController
   # DELETE /sesion_colegios/1
   # DELETE /sesion_colegios/1.json
   def destroy
+    @tratamiento = @sesion_colegio.tratamiento
     @sesion_colegio.destroy
     respond_to do |format|
-      format.html { redirect_to sesion_colegios_url, notice: 'Sesion colegio was successfully destroyed.' }
+      format.html { redirect_to paciente_tratamiento_sesion_colegios_path(@sesion_colegio.tratamiento.paciente ,@sesion_colegio.tratamiento), notice: 'Sesion colegio was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
