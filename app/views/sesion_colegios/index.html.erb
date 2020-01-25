@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Sesion Colegios</h1>
 
@@ -16,7 +16,7 @@
     <% @sesiones_colegio.each do |sesion_colegio| %>
       <tr>
         <td><%= sesion_colegio.cita %></td>
-        <td><%= sesion_colegio.descripcion %></td>
+        <td><%= sesion_colegio.descripcion.html_safe %></td>
         <td><%= sesion_colegio.numero_cita %></td>
         <td><%= link_to 'Show', sesion_colegio %></td>
         <td><%= link_to 'Edit', edit_sesion_colegio_path(sesion_colegio) %></td>

@@ -10,6 +10,10 @@ end
 gem 'rails', '~> 5.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'jquery-rails'
+gem 'bootstrap'
+gem 'summernote-rails', '~> 0.8.12.0'
+gem 'alertifyjs-rails'
 gem 'rails-erd', group: :development
 gem 'cancancan'
 gem 'carrierwave'

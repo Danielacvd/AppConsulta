@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Sesion Particulars</h1>
 
@@ -16,7 +16,7 @@
     <% @paciente.sesion_particulars.each do |sesion_particular| %>
       <tr>
         <td><%= sesion_particular.cita %></td>
-        <td><%= sesion_particular.descripcion_sesion %></td>
+        <td><%= sesion_particular.descripcion_sesion.html_safe %></td>
         <td><%= sesion_particular.numero_cita %></td>
         <td><%= link_to 'Show', sesion_particular %></td>
         <td><%= link_to 'Edit', edit_sesion_particular_path(sesion_particular) %></td>

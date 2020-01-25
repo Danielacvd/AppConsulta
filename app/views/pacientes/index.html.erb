@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h2 class="text-center">Pacientes de : <%= @current_user.name%> <%= @current_user.last_name%> </h2>
 
@@ -28,7 +28,7 @@
             <%= link_to 'Sesiones Del Paciente', paciente_sesion_particulars_path(paciente), class: "btn btn-success" %>
           <% end %>
         <%= link_to 'Edit', edit_paciente_path(paciente), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', paciente, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <%= link_to 'Destroy', paciente, method: :delete, data: { confirm: 'Are you suaaaare?' }, class: "btn btn-danger" %></td>
     <% end %>
   </tbody>
 </table>
