@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'summernote-rails', '~> 0.8.12.0'
 gem 'alertifyjs-rails'
+gem 'activeadmin'
 gem 'rails-erd', group: :development
 gem 'cancancan'
 gem 'carrierwave'
