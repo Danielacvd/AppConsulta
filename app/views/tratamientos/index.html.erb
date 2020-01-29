@@ -1,12 +1,12 @@
 
 <h1>Tratamientos</h1>
 
-<table>
+<table id="myTable" class="table hover" border="1">
   <thead>
     <tr>
       <th>Name</th>
       <th>Plan</th>
-      <th colspan="3"></th>
+      <th>Opciones</th>
     </tr>
   </thead>
 
@@ -15,16 +15,13 @@
       <tr>
         <td><%= tratamiento.name %></td>
         <td><%= tratamiento.plan %></td>
-        <td><%= link_to 'Show', tratamiento %></td>
-        <td><%= link_to 'Edit', edit_tratamiento_path(tratamiento) %></td>
-        <td><%= link_to 'Destroy', tratamiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Sesiones', paciente_tratamiento_sesion_colegios_path(tratamiento.paciente_id, tratamiento) %></td>
+        <td><%= link_to 'Show', tratamiento, class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_tratamiento_path(tratamiento), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', tratamiento, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <%= link_to 'Sesiones', paciente_tratamiento_sesion_colegios_path(tratamiento.paciente_id, tratamiento), class: "btn btn-success" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-
-<%= link_to 'New Tratamiento', new_paciente_tratamiento_path %>
+<h3 class="text-center"><%= link_to 'New Tratamiento', new_paciente_tratamiento_path, class: "btn btn-dark" %></h3>

@@ -16,6 +16,7 @@
  *= require datatables.net-bs4/css/dataTables.bootstrap4
  *= require_tree .
  *= require_self
+ *= stub "active_admin"
  */
 
  @font-face{
@@ -34,20 +35,209 @@
  body {
    margin: 0px;
   font-family: 'Roboto', sans-serif;
+  background-image: url('pattern.png')
  }
  h1, h2, h3, h4{
   font-family: 'Open Sans', sans-serif;
  }
 
 
- header {
-   background-image: url('images/fondo.png');
-   background-color: rgb(89, 123, 226);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: left;
-   padding-bottom: 10rem;
+
+ .wrap{
+   width: 1250px;
+   margin: 0px auto;
  }
+
+ .gear, .icon{
+   font-family: "WebSymbolsRegular";
+ }
+
+
+
+ /* CSS cabecera */
+
+ #header{
+   width: 100%;
+   background-color: black;
+   height: 70px;
+   font-family: "BebasNeue";
+   color: white;
+ }
+
+ #logo{
+   float: left;
+   width: 204px;
+   background-color: #37bcf9;
+   text-align: center;
+   margin-top: 8px;
+   margin-left: 20px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   overflow: hidden;
+   transition: all 300ms;
+ }
+
+ #logo:hover {
+   border-radius: 2px;
+   color: black;
+   background-color: #ccc;
+ }
+
+ #logo h3{
+   display: block;
+   float: right;
+   font-size: 40px;
+   margin-top: 5px;
+   transition: all 300ms;
+   margin-right: 65px;
+ }
+  #logo h3 a{
+    text-decoration: none;
+    color: white;
+  }
+
+  #logo h3 a:hover{
+    color: black;
+  }
+
+ #logo:hover h3{
+   animation: fromRight 300ms linear;
+ }
+
+ @keyframes fromRight {
+   from{
+     transform: translateX(200%);
+   }
+   to{
+     transform: translateX(0%);
+   }
+ }
+ #logo .gear{
+   display: block;
+   float: left;
+   font-size: 30px;
+   margin-top: 8px;
+   margin-left: 26px;
+   animation-name: rotate-gear;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+ }
+
+ @keyframes rotate-gear {
+   from{
+     transform: rotateZ(0deg);
+   }
+   to{
+     transform: rotateZ(360deg);
+   }
+ }
+
+ #logo:hover .gear{
+   animation: fromBellow 500ms linear;
+ }
+
+ @keyframes fromBellow {
+   0%{
+     transform: translateY(0%);
+   }
+   50%{
+     transform: translateY(200%);
+   }
+   100%{
+     transform: translateY(0%);
+   }
+ }
+
+ #menu {
+   float: right;
+   margin-right: 15%;
+   height: 70px;
+   background-color: black;
+   margin: 0px 20px 0px 20px;
+ }
+
+ #menu ul li{
+   font-size: 24px;
+   display: inline-block;
+   margin: 0px 20px 0px 20px;
+   letter-spacing: 1px;
+   line-height: 70px;
+ }
+
+ #menu ul li a{
+   color: white;
+   display: block;
+   text-decoration: none;
+   transition: all 300ms;
+ }
+
+ #menu ul li a:hover{
+   color: #37bcf9;
+   transform: scale(1.2, 1.2)
+ }
+
+ #banner{
+   width: 95.5%;
+   height: 90;
+   background: url('bakbaner.png');
+   border: 10px solid white;
+   box-shadow: 0px 0px 2px grey;
+   background-position: -200px -200px;
+   margin: 20px auto;
+   animation: backBanner 10s linear;
+   overflow: hidden;
+ }
+
+ @keyframes backBanner {
+   0%{
+     background-position: 0px 0px;
+   }
+   100%{
+     background-position: -200px -200px;
+   }
+ }
+
+ #banner h1{
+   display: block;
+   width: 850px;
+   font-family: "BebasNeue";
+   color: white;
+   font-size: 45px;
+   letter-spacing: 2px;
+   margin: 27px auto;
+   text-shadow: 2px 2px 1px black;
+   font-weight: normal;
+   text-align: center;
+   animation: showText 3s linear;
+
+ }
+
+ @keyframes showText {
+   0%{
+     transform: translateX(-600%) scale(5,5);
+     opacity: 1;
+   }
+   50%{
+     transform: translateX(600%) scale(5,5);
+     opacity: 1;
+   }
+   75%{
+     transform: translateX(-600%) scale(5,5);
+     text-shadow: none;
+     color: transparent;
+     opacity: 0;
+   }
+   100%{
+     transform: translateX(0%) scale(1,1);
+     color: white;
+     text-shadow: 2px 2px 1px black;
+     opacity: 1;
+   }
+ }
+
+
+
 .bg{
   background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(7,50,148,1) 48%, rgba(5,91,175,1) 61%, rgba(5,100,181,1) 64%, rgba(4,122,195,1) 71%, rgba(0,212,255,1) 100%);
@@ -71,6 +261,13 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
 
 .registro a{
   text-decoration: none;
+  color:white;
+}
+.registro a:hover{
+  color:#ccc;
+}
+.registro label{
+  display: block;
 }
 
 .card img{
@@ -78,10 +275,12 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   height: 320px;
   object-fit: cover;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select{
+
+
+.registro input[type="text"],
+.registro input[type="email"],
+.registro input[type="password"],
+.registro select{
   border: 1px solid #c9c9c9;
   box-shadow: 0px 0px 2px #ccc inset;
   padding: 1px;
@@ -90,20 +289,20 @@ select{
   color: gray;
   transition: all 300ms;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-select:focus{
+.registro input[type="text"]:focus,
+.registro input[type="email"]:focus,
+.registro input[type="password"]:focus,
+.registro select:focus{
   border: 3px solid #70b231;
   color: black;
 }
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-button{
+.registro input[type="button"],
+.registro input[type="submit"],
+.registro input[type="reset"],
+.registro button{
   display: block;
   border-radius: 2px;
-  width: 60px;
+  width: 140px;
   padding: 3px;
   background: linear-gradient(to bottom, #70b231 0%, rgb(15, 149, 32));
   border: 1px solid green;
@@ -111,21 +310,21 @@ button{
   color: white;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-button:hover{
+.registro input[type="button"]:hover,
+.registro input[type="submit"]:hover,
+.registro input[type="reset"]:hover,
+.registro button:hover{
   box-shadow: 0px 0px 3px grey;
 }
 
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active,
-button:active{
+.registro input[type="button"]:active,
+.registro input[type="submit"]:active,
+.registro input[type="reset"]:active,
+.registro button:active{
   box-shadow: 0px 0px 3px grey inset;
   text-shadow: 0px 0px 1px #ccc;
 }
-input[type="submit"]{
+.registro input[type="submit"]{
   margin: 0px auto;
 }
 #myTable_wrapper{
@@ -167,4 +366,202 @@ input[type="submit"]{
   font-size: 17px;
   color: #37bcf9;
   background-color: #343a40;
+}
+
+h2{
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 4px;
+  margin-top: 10px;
+  text-shadow: 0px 1px 1px #333333;
+  margin-bottom: 20px;
+}
+ .card{
+  background-image: url('paven.png')
+ }
+
+.card-body h5{
+  text-shadow: 0px 1px 1px #333333;
+  letter-spacing: 1px;
+}
+
+.card-body .icon{
+  float: left;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+.clearfix{
+  float: none;
+  clear: both;
+}
+
+
+#footer{
+  width: 100%;
+  height: 470px;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+#footer .wrap > div{
+  float: left;
+  width: 320px;
+  height: 370px;
+  margin: 40px;
+  text-align: center;
+  color: white;
+  font-family: "TrebuchetMS";
+}
+
+#footer a{
+  text-decoration: none;
+  color: #37bcf9;
+  transition: all 300ms;
+}
+
+#footer h5{
+  display: block;
+  background: url("../img/pxgray.png"), white;
+  height: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: "BebasNeue";
+  font-size: 40px;
+  line-height: 55px;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+#footer ul{
+  text-align: left;
+  margin: 20px;
+  font-size: 25px;
+}
+
+#footer ul li{
+  margin-top: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+#footer ul li  a{
+  display: block;
+  height: 40px;
+  transition: all 300ms;
+}
+
+#footer ul li:hover  a{
+  padding-left: 40px;
+  color: white;
+  width: 100%;
+
+}
+
+
+
+
+#footer iframe{
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 5px solid white;
+  box-shadow: 0px 0px 5px gray;
+
+}
+
+#footer img{
+    margin-bottom: 15px;
+}
+
+#footer #browsers img{
+  width: 45px;
+}
+#show > p > strong{
+  display: block;
+}
+
+#show a{
+  text-decoration: none;
+  color: black;
+}
+#show a:hover{
+  color: white;
+  font-size: 20px;
+}
+
+#show{
+  box-shadow: 0px 0px 5px gray;
+  background-color: #ccc;
+  text-align: center;
+  width: 45%;
+  margin-left: 28%;
+  font-size: 20px;
+}
+
+
+.registro2{
+  width: 70%;
+  margin: 10px;
+  margin:0px auto;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to bottom, rgb(13, 180, 155) 0%, rgb(19, 110, 55));
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.3), 0px 1px white inset, 0px -3px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.registro2 h2{
+  padding: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.registro2 a{
+  text-decoration: none;
+  color:white;
+}
+.registro2 a:hover{
+  color:#ccc;
+}
+.registro2 label{
+  display: block;
+}
+
+
+
+
+
+
+
+.registro2 input[type="submit"]{
+
+  display: block;
+  border-radius: 2px;
+  width: 180px;
+  padding: 3px;
+  background: linear-gradient(to bottom, #70b231 0%, rgb(15, 149, 32));
+  border: 1px solid green;
+  cursor: pointer;
+  color: white;
+}
+
+
+.registro2 input[type="submit"]:hover{
+
+
+  box-shadow: 0px 0px 3px grey;
+}
+
+
+.registro2 input[type="submit"]:active{
+
+
+  box-shadow: 0px 0px 3px grey inset;
+  text-shadow: 0px 0px 1px #ccc;
+}
+.registro2 input[type="submit"]{
+  margin: 0px auto;
 }

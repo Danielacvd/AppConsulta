@@ -1,19 +1,19 @@
 
 
-<p>
-  <strong>Cita:</strong>
-  <%= @sesion_particular.cita %>
-</p>
+  <p>
+    <strong>Cita:</strong>
+    <%= @sesion_particular.cita %>
+  </p>
 
-<p>
-  <strong>Descripcion sesion:</strong>
-  <%= @sesion_particular.descripcion_sesion.html_safe %>
-</p>
+  <p>
+    <strong>Descripcion sesion:</strong>
+    <%= @sesion_particular.descripcion_sesion.html_safe %>
+  </p>
 
-<p>
-  <strong>Numero cita:</strong>
-  <%= @sesion_particular.numero_cita %>
-</p>
+  <p>
+    <strong>Numero cita:</strong>
+    <%= @sesion_particular.numero_cita %>
+  </p>
 
-<%= link_to 'Edit', edit_sesion_particular_path(@sesion_particular) %> |
-<%= link_to 'Back', paciente_sesion_particulars_path(@paciente) %>
+  <%= link_to 'Edit', edit_sesion_particular_path(@sesion_particular) %>
+  <%= link_to 'Back', paciente_sesion_particulars_path(@paciente) %>

@@ -1,47 +1,51 @@
-<%= form_with(model: paciente, local: true) do |form| %>
-  <% if paciente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
 
-      <ul>
-      <% paciente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+
+  <%= form_with(model: paciente, local: true) do |form| %>
+    <% if paciente.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+        <ul>
+        <% paciente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :paciente_name %>
     </div>
+
+    <div class="field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, id: :paciente_last_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :curso %>
+      <%= form.text_field :curso, id: :paciente_curso %>
+    </div>
+
+    <div class="field">
+      <%= form.label :photo %>
+      <%= form.file_field :photo %>
+    </div>
+
+    <div class="field">
+      <%= form.label :birth_date %>
+      <%= form.date_select :birth_date, id: :paciente_birth_date, start_year: 2000, end_year: 2020 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :role %>
+      <input type="checkbox" value="particular" name="paciente[role]">
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :paciente_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :paciente_last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :curso %>
-    <%= form.text_field :curso, id: :paciente_curso %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_select :birth_date, id: :paciente_birth_date, start_year: 2000, end_year: 2020 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role %>
-    <input type="checkbox" value="particular" name="paciente[role]">
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

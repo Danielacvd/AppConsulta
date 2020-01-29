@@ -1,7 +1,43 @@
-<div class="contentfooter">
 
-  <footer class="bg-dark text-center text-light p-3">
-    <h3>Daniel Paredes &copy; <i class="far fa-envelope"></i></h3>
-  </footer>
+<div class="clearfix">
 
 </div>
+  <footer class="mt-3" id="footer">
+    <div class="wrap">
+
+      <div id="menu_footer">
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="<%= root_path %>">Inicio</a></li>
+          <li><a href="<%= pacientes_path %>">Pacientes</a></li>
+          <li><a href="<%= new_paciente_path %>">Paciente Nuevo</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div id="location">
+        <h5>Donde estamos</h5>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1979.6134305007722!2d-70.68197267269417!3d-33.44149824265466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c45a9bd30c11%3A0xebb215197a654cf5!2sMuseo%20Nacional%20de%20Historia%20Natural!5e0!3m2!1ses!2scl!4v1579624715921!5m2!1ses!2scl"
+          width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+
+      <div id="info">
+        <h5>Desarrollado Con</h5>
+        <p>
+          <img src="<%= asset_path 'ruby3.png' %>" alt="Creado con HTML5 y CSS3">
+        </p>
+        <h5>Optimizado para</h5>
+        <p id="browsers">
+          <a href="#"><img src="<%= asset_path 'firefox-icon.png' %>" alt="Firefox" title="Firebox"></a>
+          <a href="#"><img src="<%= asset_path 'chrome.png' %>" alt="Chrome" title="Chrome"></a>
+          <a href="#"><img src="<%= asset_path 'Opera_256x256.png' %>" alt="Opera" title="Opera"></a>
+          <a href="#"><img src="<%= asset_path 'safari.png' %>" alt="safari" title="safari"></a>
+          <a href="#"><img src="<%= asset_path 'ios.png' %>" alt="Apple" title="Apple"></a>
+
+        </p>
+        <h5>Autor</h5>
+        <p>&copy; Daniel Paredes</p>
+      </div>
+    </div>
+  </footer>

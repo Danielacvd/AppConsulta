@@ -15,5 +15,5 @@
   <%= @sesion_colegio.numero_cita %>
 </p>
 
-<%= link_to 'Edit', edit_sesion_colegio_path(@sesion_colegio) %> |
+<%= link_to 'Edit', edit_paciente_tratamiento_sesion_colegio_path(@sesion_colegio.tratamiento, @tratamiento.paciente) %> 
 <%= link_to 'Back', paciente_tratamiento_sesion_colegios_path(@sesion_colegio.tratamiento, @tratamiento) %>

@@ -1,14 +1,16 @@
 
+<div id="show"class="">
 
-<p>
-  <strong>Name:</strong>
-  <%= @tratamiento.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @tratamiento.name %>
+  </p>
 
-<p>
-  <strong>Plan:</strong>
-  <%= @tratamiento.plan %>
-</p>
+  <p>
+    <strong>Plan:</strong>
+    <%= @tratamiento.plan %>
+  </p>
 
-<%= link_to 'Edit', edit_tratamiento_path(@tratamiento) %> |
-<%= link_to 'Back', paciente_tratamientos_path(@paciente) %>
+  <%= link_to 'Edit', edit_tratamiento_path(@tratamiento) %> 
+  <%= link_to 'Back', paciente_tratamientos_path(@paciente) %>
+</div>

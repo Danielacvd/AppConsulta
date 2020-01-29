@@ -1,34 +1,40 @@
 
+<div id="show" class="">
 
-<p>
-  <strong>Name:</strong>
-  <%= @paciente.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @paciente.name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @paciente.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @paciente.last_name %>
+  </p>
 
-<p>
-  <strong>Curso:</strong>
-  <%= @paciente.curso %>
-</p>
+  <p>
+    <strong>Curso:</strong>
+    <%= @paciente.curso %>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @paciente.photo %>
-</p>
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag @paciente.photo, size: "64x64" %>
+  </p>
 
-<p>
-  <strong>Birth date:</strong>
-  <%= @paciente.birth_date %>
-</p>
+  <p>
+    <strong>Birth date:</strong>
+    <%= @paciente.birth_date %>
+    <br>
+    <%= time_ago_in_words(@paciente.birth_date) %>
+  </p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @paciente.role %>
-</p>
+  <p>
+    <strong>Role:</strong>
+    <%= @paciente.role %>
+  </p>
 
-<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
-<%= link_to 'Back', pacientes_path %>
+  <%= link_to 'Edit', edit_paciente_path(@paciente) %> |
+  <%= link_to 'Back', pacientes_path %>
+
+
+</div>
