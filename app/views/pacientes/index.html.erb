@@ -1,29 +1,32 @@
 <h2 class="text-center">Pacientes de : <%= @current_user.name%> <%= @current_user.last_name%> </h2>
+<div class="table-responsive">
 
-<table id="myTable" class="table hover" border="1">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Paciente de Atencion</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pacientes.each do |paciente| %>
+  <table id="myTable" class="table hover" border="1">
+    <thead>
       <tr>
-        <td><%= paciente.name %></td>
-        <td><%= paciente.last_name %></td>
-        <td><%= paciente.role %></td>
-        <td><%= link_to 'Show', paciente, class: "btn btn-info" %>
-          <% if paciente.role == "colegio"%>
-          <%= link_to 'Sesiones Del Paciente', paciente_tratamientos_path(paciente), class: "btn btn-success" %>
-          <% else %>
-            <%= link_to 'Sesiones Del Paciente', paciente_sesion_particulars_path(paciente), class: "btn btn-success" %>
-          <% end %>
-        <%= link_to 'Edit', edit_paciente_path(paciente), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', paciente, method: :delete, data: { confirm: 'Are you suaaaare?' }, class: "btn btn-danger" %></td>
-    <% end %>
-  </tbody>
-</table>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Paciente de Atencion</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @pacientes.each do |paciente| %>
+        <tr>
+          <td><%= paciente.name %></td>
+          <td><%= paciente.last_name %></td>
+          <td><%= paciente.role %></td>
+          <td><%= link_to 'Show', paciente, class: "btn btn-info" %>
+            <% if paciente.role == "colegio"%>
+            <%= link_to 'Sesiones Del Paciente', paciente_tratamientos_path(paciente), class: "btn btn-success" %>
+            <% else %>
+              <%= link_to 'Sesiones Del Paciente', paciente_sesion_particulars_path(paciente), class: "btn btn-success" %>
+            <% end %>
+          <%= link_to 'Edit', edit_paciente_path(paciente), class: "btn btn-primary" %>
+          <%= link_to 'Destroy', paciente, method: :delete, data: { confirm: 'Are you suaaaare?' }, class: "btn btn-danger" %></td>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

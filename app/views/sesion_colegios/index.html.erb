@@ -8,7 +8,7 @@
   <div class="row">
     <% @sesiones_colegio.each_slice(4) do |row| %>
       <% row.each do |pac| %>
-        <div class="col-3">
+        <div class="col-12 col-md-6 col-lg-3 p-1">
           <div class="card">
             <div class="card-body">
               <span class="icon">P</span>
@@ -42,8 +42,8 @@
 
               <h5>Numero de Cita: <%= pac.numero_cita %></h5>
               <%= link_to 'Tratamientos del Paciente', paciente_tratamientos_path, class: "btn btn-secondary" %>
-              
-              <td><%= link_to 'Edit', pac, class: "btn btn-primary" %></td>
+
+              <td><%= link_to 'Edit', edit_sesion_colegio_path(pac), class: "btn btn-primary" %></td>
               <td><%= link_to 'Destroy', pac, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
             </div>
           </div>

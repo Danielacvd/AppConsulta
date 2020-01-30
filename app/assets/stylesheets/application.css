@@ -51,7 +51,19 @@
  .gear, .icon{
    font-family: "WebSymbolsRegular";
  }
-
+.icon2{
+  font-family: "WebSymbolsRegular";
+  color: #37bcf9 !important;
+  font-size: 24px;
+  animation-name: rotate-gear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.icon2 a{
+  text-decoration: none;
+  background-color: black;
+}
 
 
  /* CSS cabecera */
@@ -66,7 +78,7 @@
 
  #logo{
    float: left;
-   width: 204px;
+   width: 200px;
    background-color: #37bcf9;
    text-align: center;
    margin-top: 8px;
@@ -179,7 +191,7 @@
 
  #banner{
    width: 95.5%;
-   height: 90;
+   height: 100px;
    background: url('bakbaner.png');
    border: 10px solid white;
    box-shadow: 0px 0px 2px grey;
@@ -351,21 +363,25 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   color: white;
 }
 .bgnav {
-  background-color: #343a40;
+  background-color: black;
   color: white;
 }
 
 .bgnav a{
-  font-size: 14px;
-  color: white;
+  font-size: 20px;
   text-decoration: none;
+  color: white;
   transition: all 300ms;
 }
 
 .bgnav a:hover{
-  font-size: 17px;
+  font-size: 22px;
   color: #37bcf9;
-  background-color: #343a40;
+  background-color: black;
+}
+
+.navbar-toggler {
+  background-color: white;
 }
 
 h2{
@@ -377,10 +393,14 @@ h2{
   margin-bottom: 20px;
 }
  .card{
-  background-image: url('paven.png')
+  background-image: url('pattern.png')
  }
 
+
 .card-body h5{
+  width: 100%;
+  height: 50px;
+
   text-shadow: 0px 1px 1px #333333;
   letter-spacing: 1px;
 }
@@ -530,12 +550,6 @@ h2{
   display: block;
 }
 
-
-
-
-
-
-
 .registro2 input[type="submit"]{
 
   display: block;
@@ -548,20 +562,218 @@ h2{
   color: white;
 }
 
-
 .registro2 input[type="submit"]:hover{
-
-
   box-shadow: 0px 0px 3px grey;
 }
 
 
 .registro2 input[type="submit"]:active{
-
-
   box-shadow: 0px 0px 3px grey inset;
   text-shadow: 0px 0px 1px #ccc;
 }
+
 .registro2 input[type="submit"]{
   margin: 0px auto;
+}
+
+.note-popover .popover-content .dropdown-menu, .card-header.note-toolbar .dropdown-menu {
+  background-color: #ccc;
+  color: black;
+}
+
+
+/* Responsive */
+
+
+@media (max-width:1250px) {
+  /* .wrap{
+    width: 90%;
+    margin: 0px auto;
+  }
+  #banner h1{
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    margin: 33px auto;
+  } */
+
+
+
+  #footer .wrap > div{
+    width: 24%;
+  }
+  #footer #browsers img{
+    width: 14%;
+  }
+  #footer h5{
+    font-size: 30px;
+  }
+}
+
+
+
+@media (max-width:984px) {
+
+  #footer .wrap > div{
+    width: 26%;
+    margin: 20px;
+  }
+  #footer h5{
+    font-size: 22px;
+  }
+}
+
+/* @media (max-width: 937px) {
+
+
+  #login a{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #login input[type="email"],
+  #login input[type="password"]{
+    width: 75%;
+  }
+  #login #user,
+  #login #password{
+    margin-left: 24px;;
+  }
+  #login input[type="submit"],
+  #login input[type="button"],
+  #login input[type="reset"],
+  #login button {
+    margin-bottom: 0px;
+  }
+
+  #login input[type="reset"]{
+    display: none;
+  }
+
+} */
+
+
+
+@media (max-width:799px) {
+  /* #banner h1{
+    font-size: 29px ;
+  }
+ */
+
+
+  #footer img{
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width:784px) {
+  /* #header{
+    width: 100%;
+    height: 135px;
+    padding-top: 10px;
+  }
+
+  #logo{
+    float: none;
+    width: 200px;
+    margin: 0px auto;
+  }
+
+  #menu{
+    clear: both;
+    float: none;
+    width: 440px;
+    margin :0px auto;
+  } */
+
+
+}
+
+
+@media (max-width:673px) {
+  /* #banner h1{
+    font-size: 25px;
+  } */
+
+  /* #lateral input[type="text"]{
+    width: 93%;
+  }
+  #login input[type="email"],
+  #login input[type="password"] {
+    width: 90%;
+  } */
+  #footer{
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+  }
+  #footer .wrap > div{
+    width: 51%;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #footer h5{
+    font-size: 25px;
+  }
+}
+
+ @media (max-width:580px) {
+  /* #logo{
+    float: left;
+  }
+  #header{
+    width: 100%;
+    height: 300px;
+    padding-top: 10px;
+  }
+  #menu{
+    clear: both;
+    float: none;
+    width: 100%;
+    margin :0px auto;
+  }
+
+  #menu ul li{
+    width: 100%;
+    line-height: 30px;
+  }
+  #menu ul li a{
+    width: 100%;
+    line-height: 52px;
+  }
+  #menu ul li a:hover{
+    color: #37bcf9;
+    transform: scale(1,1);
+  } */
+
+  #banner{
+    height: 85px;
+  }
+  #banner h1{
+    font-size: 21px;
+    width: 72%;
+
+  }
+  #footer{
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+  }
+  #footer .wrap > div{
+    width: 51%;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #footer h5{
+    font-size: 25px;
+    width: 65%;
+  }
+  #footer p{
+      font-size: 25px;
+    width: 65%;
+  }
+
 }
