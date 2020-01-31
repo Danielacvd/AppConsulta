@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :cargos
   get 'pages/dashboard'
   root 'pages#index'
-   devise_for :users, controllers: {
+   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
 
      registrations: 'users/registrations'
    }
