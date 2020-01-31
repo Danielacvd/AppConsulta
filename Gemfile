@@ -19,6 +19,7 @@ gem 'rails-erd', group: :development
 gem 'cancancan'
 gem 'carrierwave'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
 gem 'mini_magick'
 # Use Puma as the app server
 gem "puma", ">= 3.12.2"

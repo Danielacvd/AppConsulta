@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200131051403) do
+ActiveRecord::Schema.define(version: 20200131171921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 20200131051403) do
     t.integer "role"
     t.string "provider"
     t.string "uid"
+    t.datetime "locked_at"
     t.index ["cargo_id"], name: "index_users_on_cargo_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

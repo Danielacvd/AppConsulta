@@ -5,7 +5,7 @@ class BillingsController < ApplicationController
     if current_user.admin?
       @billings = Billing.all
     else
-      redirect_to root_path, notice: 'No tiene permisos para ver los mensajes.'
+      redirect_to root_path, notice: 'No tiene permisos para ver el contenido.'
     end
   end
 
