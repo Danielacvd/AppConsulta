@@ -5,7 +5,11 @@ class ContactosController < InheritedResources::Base
 
     authenticate_user!
     if current_user.admin?
-      @contactos = Contacto.all
+      if params[:q].present?
+        @contactos = Contacto.where('correo like ?', "%#{params[:q]}%")
+      else
+        @contactos = Contacto.all
+      end
     else
       redirect_to root_path, notice: 'No tiene permisos para ver los mensajes.'
     end
