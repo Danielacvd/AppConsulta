@@ -23,6 +23,7 @@ gem 'mini_magick'
 # Use Puma as the app server
 gem "puma", ">= 3.12.2"
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+gem 'paypal-sdk-rest'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

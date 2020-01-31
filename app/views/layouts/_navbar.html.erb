@@ -15,6 +15,7 @@
       <% if current_user.admin? %>
         <li class="nav-item nav-link"><%= link_to 'Dashboard', dashboards_index_path %></li>
         <li class="nav-item nav-link"><%= link_to 'Cargos', cargos_path %></li>
+        <li class="nav-item nav-link"><%= link_to 'Pagos', billings_path %></li>
         <li class="nav-item nav-link"><%= link_to 'Contactos', contactos_path %></li>
       <% end %>
     <% end %>

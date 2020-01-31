@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'dashboards/index'
 
+  resources :billings, only: [:index] do
+    collection do
+      get 'pre_pay'
+      get 'execute'
+    end
+  end
+
   resources :sesion_colegios
   resources :tratamientos
   resources :tests

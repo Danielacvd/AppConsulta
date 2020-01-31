@@ -6,8 +6,9 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_and_belongs_to_many :pacientes
-  belongs_to :cargo
-  attribute :cargo_id, :integer, default: 9
+  has_many :billings
+  belongs_to :cargo, optional: true
+  #attribute :cargo_id, :integer, default: 9
 
   def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
