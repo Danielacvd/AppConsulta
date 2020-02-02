@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook, :github]
 
   has_and_belongs_to_many :pacientes
-  has_many :billings
+  has_many :billings, dependent: :destroy
   belongs_to :cargo, optional: true
   #attribute :cargo_id, :integer, default: 9
 

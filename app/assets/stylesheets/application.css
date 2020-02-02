@@ -586,18 +586,6 @@ h2{
 
 
 @media (max-width:1250px) {
-  /* .wrap{
-    width: 90%;
-    margin: 0px auto;
-  }
-  #banner h1{
-    width: 100%;
-    font-size: 35px;
-    text-align: center;
-    margin: 33px auto;
-  } */
-
-
 
   #footer .wrap > div{
     width: 24%;
@@ -623,43 +611,9 @@ h2{
   }
 }
 
-/* @media (max-width: 937px) {
-
-
-  #login a{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #login input[type="email"],
-  #login input[type="password"]{
-    width: 75%;
-  }
-  #login #user,
-  #login #password{
-    margin-left: 24px;;
-  }
-  #login input[type="submit"],
-  #login input[type="button"],
-  #login input[type="reset"],
-  #login button {
-    margin-bottom: 0px;
-  }
-
-  #login input[type="reset"]{
-    display: none;
-  }
-
-} */
-
 
 
 @media (max-width:799px) {
-  /* #banner h1{
-    font-size: 29px ;
-  }
- */
-
 
   #footer img{
     margin-bottom: 15px;
@@ -667,42 +621,11 @@ h2{
   }
 }
 
-@media (max-width:784px) {
-  /* #header{
-    width: 100%;
-    height: 135px;
-    padding-top: 10px;
-  }
 
-  #logo{
-    float: none;
-    width: 200px;
-    margin: 0px auto;
-  }
-
-  #menu{
-    clear: both;
-    float: none;
-    width: 440px;
-    margin :0px auto;
-  } */
-
-
-}
 
 
 @media (max-width:673px) {
-  /* #banner h1{
-    font-size: 25px;
-  } */
 
-  /* #lateral input[type="text"]{
-    width: 93%;
-  }
-  #login input[type="email"],
-  #login input[type="password"] {
-    width: 90%;
-  } */
   #footer{
     width: 100%;
     height: auto;
@@ -720,33 +643,7 @@ h2{
 }
 
  @media (max-width:580px) {
-  /* #logo{
-    float: left;
-  }
-  #header{
-    width: 100%;
-    height: 300px;
-    padding-top: 10px;
-  }
-  #menu{
-    clear: both;
-    float: none;
-    width: 100%;
-    margin :0px auto;
-  }
 
-  #menu ul li{
-    width: 100%;
-    line-height: 30px;
-  }
-  #menu ul li a{
-    width: 100%;
-    line-height: 52px;
-  }
-  #menu ul li a:hover{
-    color: #37bcf9;
-    transform: scale(1,1);
-  } */
 
   #banner{
     height: 85px;

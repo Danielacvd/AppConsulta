@@ -1,4 +1,20 @@
-<%= @billings.each do |billing| %>
-  <p>billing.user.name</p>
-  <p><%= billing.amount %></p>
-<% end %>
+
+<div class="table-responsive">
+  <table class="table" border="1">
+    <thead>
+      <tr>
+        <th>Id user</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @billings.each do |billing| %>
+        <tr>
+          <td><%= billing.user_id %></td>
+          <td><%= billing.amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
