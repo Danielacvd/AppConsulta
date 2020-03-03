@@ -31,7 +31,7 @@ class PacientesController < ApplicationController
     respond_to do |format|
       if @paciente.save
         if @paciente.role == "colegio"
-          format.html { redirect_to paciente_tests_path(@paciente), notice: 'Paciente was successfully created.' }
+          format.html { redirect_to paciente_tratamientos_path(@paciente), notice: 'Paciente was successfully created.' }
           format.json { render :show, status: :created, location: @paciente }
         else
           format.html { redirect_to paciente_sesion_particulars_path(@paciente), notice: 'Paciente was successfully created.' }
