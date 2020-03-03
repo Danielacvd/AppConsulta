@@ -23,13 +23,13 @@ class BillingsController < ApplicationController
         :items => [{
           :name => "item",
           :sku => "item",
-          :price => "5",
+          :price => "1",
           :currency => "USD",
           :quantity => 1 }]},
       :amount =>  {
-        :total =>  "5",
+        :total =>  "1",
         :currency =>  "USD" },
-      :description =>  "Compra de 1 mes." }]})
+      :description =>  "Donacion de 1 mes." }]})
 
 
         if @payment.create
@@ -55,9 +55,9 @@ class BillingsController < ApplicationController
           currency: 'USD'
         )
 
-        redirect_to root_path, notice: "La compra se realizo con exito"
+        redirect_to root_path, notice: "La donacion se realizo con exito"
       else
-        render plain; "no se pudo generar el cobro en Paypal"
+        render plain; "no se pudo generar la docacion en Paypal"
       end
     end
 end
