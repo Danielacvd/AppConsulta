@@ -15,12 +15,12 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :name %>
+      <%= form.label :name, 'Nombre' %>
       <%= form.text_field :name, id: :paciente_name %>
     </div>
 
     <div class="field">
-      <%= form.label :last_name %>
+      <%= form.label :last_name, 'Apellido' %>
       <%= form.text_field :last_name, id: :paciente_last_name %>
     </div>
 
@@ -30,17 +30,12 @@
     </div>
 
     <div class="field">
-      <%= form.label :photo %>
-      <%= form.file_field :photo %>
-    </div>
-
-    <div class="field">
-      <%= form.label :birth_date %>
+      <%= form.label :birth_date, 'Fecha de nacimiento' %>
       <%= form.date_select :birth_date, id: :paciente_birth_date, start_year: 2000, end_year: 2020 %>
     </div>
 
     <div class="field">
-      <%= form.label :role %>
+      <%= form.label :role, 'Role (Por defecto Escolar)' %>
       <input type="checkbox" value="particular" name="paciente[role]">
     </div>
 
