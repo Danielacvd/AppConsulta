@@ -10,7 +10,8 @@ set :repo_url, "git@github.com:Danielacvd/AppConsulta.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, "/home/daniel/App"
+set :deploy_to, '/home/daniel/App'
+set :use_sudo, false
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
