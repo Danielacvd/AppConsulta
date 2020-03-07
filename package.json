@@ -3,5 +3,9 @@
   "private": true,
   "dependencies": {
     "datatables.net-bs4": "^1.10.20"
+  },
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.10.3"
   }
 }
