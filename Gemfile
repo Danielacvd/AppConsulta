@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'mini_magick'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # Use Puma as the app server
 gem "puma", ">= 3.12.2"
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
