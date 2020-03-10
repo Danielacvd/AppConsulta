@@ -13,7 +13,7 @@
  *= require alertify
  *= require alertify/default
  *= require alertify/bootstrap
- *= require datatables.net-bs4/css/dataTables.bootstrap4
+
  *= require_tree .
  *= require_self
  *= stub "active_admin"

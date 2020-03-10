@@ -19,7 +19,7 @@
 //= require summernote/summernote-bs4.min
 //= require summernote-init
 
-//= require datatables.net-bs4/js/dataTables.bootstrap4
+
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
